@@ -86,23 +86,306 @@ ul {
     transform: scale(1.03);
 }
 
-/* Lebenslauf */
-.lebenslauf {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap:
+/* =========================================
+   LEBENSLAUF
+========================================= */
+
+.lebenslauf-section {
+    max-width: 1100px;
+    padding: 0;
+    overflow: hidden;
 }
 
-.lebenslauf img {
-    max-width: 100%;
-    height: auto;
+.lebenslauf-section > h2 {
+    padding: 25px 25px 10px;
+}
+
+
+/* Hauptbereich */
+
+.cv {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 900px;
+    background: #ffffff;
+}
+
+
+/* =========================================
+   LINKE SEITE
+========================================= */
+
+.cv-sidebar {
+    background: #f1efed;
+    padding: 35px 25px;
+    color: #4b4b4b;
+}
+
+
+/* Profil */
+
+.cv-profile {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.cv-profile img {
+    width: 160px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 25px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.cv-profile h3 {
+    margin: 0;
+    font-size: 30px;
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: 5px;
+    color: #80695c;
+}
+
+
+/* Linke Blöcke */
+
+.cv-block {
+    margin-top: 35px;
+}
+
+.cv-block h4 {
+    color: #80695c;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #80695c;
+    padding-bottom: 10px;
+}
+
+.cv-block p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skill {
+    margin: 18px 0;
+}
+
+.skill span {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: #ffffff;
     border-radius: 10px;
-    border: 2px solid #333;
-    transition: 0.3s;
+    overflow: hidden;
 }
 
-.lebenslauf img:hover {
-    transform: scale(1.03);
+.skill-bar div {
+    height: 100%;
+    background: #80695c;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   RECHTE SEITE
+========================================= */
+
+.cv-content {
+    padding: 40px 45px;
+    background: #ffffff;
+}
+
+
+/* Überschriften */
+
+.cv-section {
+    margin-bottom: 50px;
+}
+
+.cv-title {
+    display: inline-block;
+    background: #f1efed;
+    border-radius: 0 30px 30px 0;
+    padding: 15px 35px;
+    margin-bottom: 35px;
+}
+
+.cv-title span {
+    color: #80695c;
+    font-size: 19px;
+    letter-spacing: 6px;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 35px;
+}
+
+
+/* senkrechte Linie */
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: #80695c;
+}
+
+
+/* einzelne Station */
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+
+/* Kreis */
+
+.timeline-dot {
+    position: absolute;
+    left: -43px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border: 2px solid #80695c;
+    border-radius: 50%;
+}
+
+
+/* Inhalt */
+
+.timeline-content {
+    padding-left: 5px;
+}
+
+.cv-date {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #222222;
+    margin-bottom: 10px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 7px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #222222;
+}
+
+.timeline-content p {
+    margin: 5px 0;
+    color: #444444;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cv-company {
+    font-weight: 500;
+}
+
+.cv-subtitle {
+    color: #8a8a8a !important;
+}
+
+
+/* Listen */
+
+.timeline-content ul {
+    margin: 15px 0 0;
+    padding-left: 20px;
+}
+
+.timeline-content li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444444;
+    margin-bottom: 2px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .cv {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-sidebar {
+        padding: 30px 25px;
+    }
+
+    .cv-content {
+        padding: 30px 20px;
+    }
+
+    .cv-profile img {
+        width: 140px;
+        height: 170px;
+    }
+
+    .cv-profile h3 {
+        font-size: 26px;
+    }
+
+    .cv-title {
+        padding: 12px 20px;
+    }
+
+    .cv-title span {
+        font-size: 15px;
+        letter-spacing: 4px;
+    }
+
+    .timeline {
+        margin-left: 10px;
+        padding-left: 25px;
+    }
+
+    .timeline-dot {
+        left: -33px;
+    }
+
+    .cv-date {
+        font-size: 14px;
+    }
+
+    .timeline-content h3 {
+        font-size: 16px;
+    }
+
+    .timeline-content p,
+    .timeline-content li {
+        font-size: 13px;
+    }
 }
 
 /* Footer */
